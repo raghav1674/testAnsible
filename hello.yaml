@@ -1,7 +1,7 @@
 ---
 - hosts: all
   tasks:
-  - name: 'Say Hello World'
+  - name: "Say Hello to {{ username }}"
     debug:
       msg: "Hello {{ username }}" 
      
