@@ -1,0 +1,5 @@
+---
+import_playbook: hello.yml
+when: playbook_name == "hello.yml"
+import_playbook: hello-2.yml
+when: playbook_name == "hello-2.yml"
