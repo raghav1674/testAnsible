@@ -1,4 +1,6 @@
 - hosts: all
+  vars:
+    svc_name: ""
   tasks:
   - name: install {{ svc_name }}
     yum:
