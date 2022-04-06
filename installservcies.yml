@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+  - name: install {{ svc_name }}
+    yum:
+      name: "{{ svc_name }}"
+      state: present
+      
+      
+  
+      
