@@ -14,9 +14,11 @@
 #     state: started
 
 - debug:
-    var: item["{{app_name}}"]
+    var: item.name
   loop:
     - "{{ apps }}"
+  when:
+    - item.app_name == "{{ app_name }}"
     
     
 # - yum:
