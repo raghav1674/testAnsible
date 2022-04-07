@@ -22,7 +22,7 @@
   with_items:
   - "{{ apps }}"
   when: 
-  - item.app_name == app_name
+  - item.app_name in app_names
   
 - copy:
     content: "{{ item.content }}"
@@ -30,7 +30,7 @@
   with_items:
   - "{{ apps }}"
   when: 
-  - item.app_name == app_name
+  - item.app_name in app_names
   
 - service:
     name: "{{ item.name }}"
@@ -38,4 +38,4 @@
   with_items:
   - "{{ apps }}"
   when: 
-  - item.app_name == app_name 
+  - item.app_name in app_names
