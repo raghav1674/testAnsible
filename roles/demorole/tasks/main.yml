@@ -1,20 +1,9 @@
 ---
 # tasks file for demorole
 - debug:
-    var: "{{ app_name }}"
+    var: lookup('dict', "{{ app_name }}")
   register: output
-- debug:
-    var: output["{{ app_name }}"]["name"]
-  register: "name"
-- debug:
-    var: output["{{ app_name }}"]["content"]
-  register: "state"
-- debug:
-    var: output["{{ app_name }}"]["state"]
-  register: "content"
-- debug:
-    var: output["{{ app_name }}"]["destination"]
-  register: "destination"
+
 - yum:
     name: "{{ name }}"
     state: "{{ state }}"
