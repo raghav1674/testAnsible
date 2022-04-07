@@ -1,16 +1,12 @@
 ---
 # tasks file for demorole
-- debug:
-    var: apps["{{ app_name }}"]['name']
-  register: output
-
 - yum:
-    name: "{{ name }}"
-    state: "{{ state }}"
+    name: '{{ apps["{{ app_name }}"]["name"] }}'
+    state: '{{ apps["{{ app_name }}"]["state"] }}'
 - copy:
-    content: "{{ content }}"
-    dest: "{{ destination }}"
+    content: '{{ apps["{{ app_name }}"]["content"] }}'
+    dest: '{{ apps["{{ app_name }}"]["destination"] }}'
 - service:
-    name: "{{ name }}"
+    name: '{{ apps["{{ app_name }}"]["name"] }}'
     state: started
 
