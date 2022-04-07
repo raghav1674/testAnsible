@@ -8,4 +8,7 @@
   - copy:
       content: "{{ item.content }}"
       dest: "{{ item.destination }}"
+  - service:
+      name: "{{ item.name }}"
+      state: started
   loop: "{{ app_name }}"
