@@ -1,12 +1,18 @@
 ---
 # tasks file for demorole
+- include_vars:
+    file: "{{ app_name }}".yml
+- yum:
+    name: "{{ name }}"
+    state: "{{ state }}"
+- copy:
+    content: "{{ content }}"
+    dest: "{{ destination }}"
 
-- debug: 
-    var: apps["{{ app_name }}"]["name"]
-  register: output
- 
-- debug:
-    var: output 
+- service:
+    name: "{{ name }}"
+    state: started
+
 # - yum:
 #     name: {{ apps["{{ app_name }}"]["name"] }}
 #     state: {{ apps["{{ app_name }}"]["state"] }}
