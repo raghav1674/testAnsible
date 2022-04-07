@@ -2,5 +2,5 @@
 - hosts: all
   roles:
   - role: demorole
-    app_names: "{{ APP_NAMES }}"
+    app_names: "{{ APP_NAMES.split(',') }}"
 
