@@ -1,3 +1,4 @@
 ---
 # defaults file for demorole
-app_name: "app1"
+app_names: 
+- ""
