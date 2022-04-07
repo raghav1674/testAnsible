@@ -14,7 +14,7 @@
 #     state: started
 
 - debug:
-    var: item
+    var: item["{{app_name}}"]
   loop:
     - "{{ apps }}"
     
