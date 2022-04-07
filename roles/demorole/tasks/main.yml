@@ -14,7 +14,7 @@
 #     state: started
 
 - debug:
-    var: vars
+    var: {{ lookup('vars', app_name) }}
 # - yum:
 #     name: {{ apps["{{ app_name }}"]["name"] }}
 #     state: {{ apps["{{ app_name }}"]["state"] }}
