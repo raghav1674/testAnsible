@@ -6,12 +6,12 @@
 - yum:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
-  loop: "{{ output }}"
+  loop: "{{ output['{{app_name}}'] }}"
 - copy:
     content: "{{ item.content }}"
     dest: "{{ item.destination }}"
-  loop: "{{ output }}"
+  loop: "{{ output['{{app_name}}']  }}"
 - service:
     name: "{{ item.name }}"
     state: started
-  loop: "{{ output }}"
+  loop: "{{ output['{{app_name}}']  }}"
