@@ -15,7 +15,7 @@
 
 - debug:
     var: item
-  loop:
+  with_items:
     - "{{ apps }}"
     
     
