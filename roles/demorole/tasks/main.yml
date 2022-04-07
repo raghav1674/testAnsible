@@ -14,10 +14,10 @@
 #     state: started
 
 - debug:
-    var: "{{ app_name }}"
-  register: "output"
-- debug:
-    var: output[app_name]
+    var: item
+  loop:
+    - {{ apps }}
+    
     
 # - yum:
 #     name: {{ apps["{{ app_name }}"]["name"] }}
