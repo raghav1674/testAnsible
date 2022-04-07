@@ -1,5 +1,6 @@
 ---
-- import_playbook: hello.yaml
-  when: playbook_name == "hello.yaml"
-- import_playbook: hello-2.yml
-  when: playbook_name == "hello-2.yml"
+- hosts: all
+  roles:
+  - role: demorole
+    app_name: "{{ APP_NAME }}"
+

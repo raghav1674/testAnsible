@@ -1,0 +1,11 @@
+---
+# tasks file for demorole
+- name: install the app
+  block:
+  - yum:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+  - copy:
+      content: "{{ item.content }}"
+      dest: "{{ item.destination }}"
+  loop: "{{ app_name }}"
