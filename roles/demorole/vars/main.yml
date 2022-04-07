@@ -1,13 +1,12 @@
 ---
 # vars file for demorole
-apps:
-  app1:
-    name: httpd
-    state: present
-    destination: /var/www/html/index.html
-    content: 'Hello from app1'
-  app2:
-    name: nginx
-    state: present 
-    destination: /usr/share/nginx/html/index.html
-    content: 'Hello from app2'
+app1:
+  name: httpd
+  state: present
+  destination: /var/www/html/index.html
+  content: 'Hello from app1'
+app2:
+  name: nginx
+  state: present 
+  destination: /usr/share/nginx/html/index.html
+  content: 'Hello from app2'
