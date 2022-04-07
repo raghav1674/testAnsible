@@ -6,11 +6,14 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   loop: "{{ app_name }}"
+  wantlist: True
 - copy:
     content: "{{ item.content }}"
     dest: "{{ item.destination }}"
   loop: "{{ app_name }}"
+  wantlist: True
 - service:
     name: "{{ item.name }}"
     state: started
   loop: "{{ app_name }}"
+  wantlist: True
