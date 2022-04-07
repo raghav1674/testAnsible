@@ -1,7 +1,7 @@
 ---
 # tasks file for demorole
 - debug:
-    var: lookup('dict', "{{ app_name }}")
+    var: "{{ app_name['name'] }}"
   register: output
 
 - yum:
