@@ -3,17 +3,13 @@
 - debug:
     var: "{{ app_name }}"
   register: output
-- debug:
-    var: output["{{ app_name }}"]['name']
 - yum:
-    name: "{{ item.name }}"
-    state: "{{ item.state }}"
-  loop: '{{ output["{{app_name}}"] }}'
+    name: '{{ output["{{ app_name }}"]["name"] }}'
+    state: '{{ output["{{ app_name }}"]["state"] }}'
 - copy:
-    content: "{{ item.content }}"
-    dest: "{{ item.destination }}"
-  loop: '{{ output["{{app_name}}"]  }}'
+    content: '{{ output["{{ app_name }}"]["content"] }}'
+    dest: '{{ output["{{ app_name }}"]["destination"] }}'
 - service:
-    name: "{{ item.name }}"
+    name: '{{ output["{{ app_name }}"]["name"] }}'
     state: started
-  loop: '{{ output["{{app_name}}"]  }}'
+
