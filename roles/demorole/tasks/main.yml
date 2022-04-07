@@ -2,7 +2,7 @@
 # tasks file for demorole
 
 - debug: 
-    var: apps["{{ app_name }}"]
+    var: apps["{{ app_name }}"]["name"]
   register: output
  
 - debug:
