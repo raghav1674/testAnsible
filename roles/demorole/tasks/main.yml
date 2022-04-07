@@ -18,7 +18,7 @@
   loop:
     - "{{ apps }}"
   when:
-    - item.app_name == "{{ app_name }}"
+    - item["app_name"] ==  app_name 
     
     
 # - yum:
