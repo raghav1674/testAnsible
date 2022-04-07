@@ -1,0 +1,4 @@
+name: httpd
+state: present
+content: 'Hello from app1'
+destination: /var/www/html/index.html
