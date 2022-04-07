@@ -16,25 +16,32 @@
 
     
     
-- yum:
-    name: "{{ item.name }}"
-    state: "{{ item.state }}"
-  with_items:
-  - "{{ apps }}"
-  when: 
-  - item.app_name in app_names
+# - yum:
+#     name: "{{ item.name }}"
+#     state: "{{ item.state }}"
+#   with_items:
+#   - "{{ apps }}"
+#   when: 
+#   - item.app_name in app_names
   
-- copy:
-    content: "{{ item.content }}"
-    dest: "{{ item.destination }}"
-  with_items:
-  - "{{ apps }}"
-  when: 
-  - item.app_name in app_names
+# - copy:
+#     content: "{{ item.content }}"
+#     dest: "{{ item.destination }}"
+#   with_items:
+#   - "{{ apps }}"
+#   when: 
+#   - item.app_name in app_names
   
-- service:
-    name: "{{ item.name }}"
-    state: started
+# - service:
+#     name: "{{ item.name }}"
+#     state: started
+#   with_items:
+#   - "{{ apps }}"
+#   when: 
+#   - item.app_name in app_names
+
+
+- include_tasks: setup_app.yml
   with_items:
   - "{{ apps }}"
   when: 
