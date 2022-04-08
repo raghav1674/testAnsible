@@ -9,7 +9,7 @@ apps:
     content: 'Hello from app1'
     
 -   app_name: app2
-    name: nginx
+    name: vsftpd
     state: present 
-    destination: /usr/share/nginx/html/index.html
+    destination: /var/ftp/pub/index.html
     content: 'Hello from app2'
